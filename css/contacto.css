@@ -1,0 +1,25 @@
+/* Aqui se aplican los estilos del encabezado */
+.contact-header{
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #2f5d8a;
+    color: white;
+}
+
+/* Aqui se organiza el formulario junto con la informacion */
+.contacto-container{
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 40px;
+    flex-wrap: wrap;
+    background-color: #f8f8f8;
+}
+
+/* Aqui se acomodan los elementos del formulario */
+form{
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+}
