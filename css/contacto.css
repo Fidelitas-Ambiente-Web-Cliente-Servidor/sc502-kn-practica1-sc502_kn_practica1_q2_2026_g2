@@ -1,4 +1,3 @@
-/* Aqui se aplican los estilos del encabezado */
 .contact-header{
     text-align: center;
     padding: 40px 20px;
@@ -6,7 +5,6 @@
     color: white;
 }
 
-/* Aqui se organiza el formulario junto con la informacion */
 .contacto-container{
     display: flex;
     justify-content: space-between;
@@ -16,10 +14,29 @@
     background-color: #f8f8f8;
 }
 
-/* Aqui se acomodan los elementos del formulario */
 form{
     flex: 1;
     min-width: 300px;
     display: flex;
     flex-direction: column;
+}
+
+form input,
+form textarea{
+    margin-bottom: 15px;
+    padding: 12px;
+    border: 1px solid #b0b0b0;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+form button{
+    background-color: #c1121f;
+    color: white;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
 }
