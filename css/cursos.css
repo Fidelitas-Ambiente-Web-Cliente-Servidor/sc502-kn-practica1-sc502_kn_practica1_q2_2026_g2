@@ -1,0 +1,54 @@
+.encabezado-cursos{
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.barra-busqueda{
+    width: 60%;
+    max-width: 500px;
+    padding: 12px;
+    margin-top: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.categoria{
+    padding: 20px 40px;
+}
+
+.categoria h2{
+    color: #c1121f;
+    margin-bottom: 20px;
+}
+
+.contenedor-cursos{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.curso-card{
+    background: white;
+    width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding-bottom: 15px;
+}
+
+.curso-card img{
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.curso-card h3,
+.curso-card p{
+    padding: 0 15px;
+}
+
+.categoria-texto{
+    color: #c1121f;
+    font-weight: bold;
+}
