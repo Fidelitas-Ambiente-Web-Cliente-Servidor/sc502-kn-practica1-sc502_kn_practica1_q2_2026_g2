@@ -37,13 +37,6 @@
     flex-wrap: wrap;
 }
 
-.curso-card {
-    width: 300px;
-    background: white;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,.15);
-}
 
 .curso-card img {
     width: 100%;
@@ -51,21 +44,17 @@
     object-fit: cover;
 }
 
-.curso-card h3 {
-    margin-top: 15px;
-}
-
-.curso-card p {
-    padding: 10px;
-}
-
-.curso-card button {
+.curso-card button,
+.btn-ver-mas {
     background: #c8102e;
     color: white;
     border: none;
     padding: 10px 20px;
     margin-bottom: 20px;
     cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
 }
 
 .estadisticas {
