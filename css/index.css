@@ -37,6 +37,13 @@
     flex-wrap: wrap;
 }
 
+.curso-card {
+    width: 300px;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,.15);
+}
 
 .curso-card img {
     width: 100%;
