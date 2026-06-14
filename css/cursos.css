@@ -52,3 +52,23 @@
     color: #c1121f;
     font-weight: bold;
 }
+.barra-busqueda {
+    padding: 10px;
+    width: 300px;
+    max-width: 90%;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+#filtroCategoria {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+#contenedorCursos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
