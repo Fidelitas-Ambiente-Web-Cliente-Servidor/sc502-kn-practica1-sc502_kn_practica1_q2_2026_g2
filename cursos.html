@@ -23,79 +23,35 @@
 
     <header class="encabezado-cursos">
         <h1>Catálogo de Cursos</h1>
-        <p>Descubre nuestros programas de formación para convertirte
-            en un piloto competitivo y profesional. </p>
- <input type="text" placeholder="Buscar curso..." class="barra-busqueda">
+
+        <p>
+            Descubre nuestros programas de formación para convertirte
+            en un piloto competitivo y profesional.
+        </p>
+
+        <input
+            type="text"
+            id="busqueda"
+            placeholder="Buscar curso..."
+            class="barra-busqueda">
+
+        <br><br>
+
+        <select id="filtroCategoria">
+            <option value="todos">Todas las categorías</option>
+            <option value="Inicial">Inicial</option>
+            <option value="Avanzada">Avanzada</option>
+        </select>
     </header>
 
     <section class="categoria">
-        <h2>Formación Inicial</h2>
 
-        <div class="contenedor-cursos">
+        <h2>Nuestros Cursos</h2>
 
-            <div class="curso-card">
-                <img src="https://circuitoftheamericas.com/wp-content/uploads/karting-hero-image-scaled.webp" alt="Karting">
-                <h3>Karting Profesional</h3>
-                <p class="categoria-texto">Categoría: Inicial</p>
-                <p>Aprende las bases del automovilismo deportivo.</p>
-                <p><strong>Duración:</strong> 2 meses</p>
-                <p><strong>Precio:</strong> $250</p>
-            </div>
-
-            <div class="curso-card">
-                <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b" alt="Karting Avanzado">
-                <h3>Karting Avanzado</h3>
-                <p class="categoria-texto">Categoría: Inicial</p>
-                <p>Mejora técnicas de frenado y control del vehículo.</p>
-                <p><strong>Duración:</strong> 3 meses</p>
-                <p><strong>Precio:</strong> $320</p>
-            </div>
-
-            <div class="curso-card">
-                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70" alt="Circuitos">
-                <h3>Introducción a Circuitos</h3>
-                <p class="categoria-texto">Categoría: Inicial</p>
-                <p>Conoce las reglas y dinámicas de pista.</p>
-                <p><strong>Duración:</strong> 1 mes</p>
-                <p><strong>Precio:</strong> $180</p>
-            </div>
+        <div id="contenedorCursos" class="contenedor-cursos">
 
         </div>
-    </section>
 
-    <section class="categoria">
-        <h2>Formación Avanzada</h2>
-
-        <div class="contenedor-cursos">
-
-            <div class="curso-card">
-                <img src="https://www.f1-fansite.com/wp-content/uploads/2012/09/nurburgring1.jpg" alt="Circuito">
-                <h3>Conducción en Circuito</h3>
-                <p class="categoria-texto">Categoría: Avanzada</p>
-                <p>Técnicas avanzadas de trazado y adelantamiento.</p>
-                <p><strong>Duración:</strong> 4 meses</p>
-                <p><strong>Precio:</strong> $500</p>
-            </div>
-
-            <div class="curso-card">
-                <img src="https://www.nationalroadautosport.com/wp-content/uploads/2023/12/Building-a-Champion-The-Anatomy-of-a-High-Performance-Racing-Car.jpg" alt="Performance">
-                <h3>Performance Racing</h3>
-                <p class="categoria-texto">Categoría: Avanzada</p>
-                <p>Optimiza tu desempeño en competición.</p>
-                <p><strong>Duración:</strong> 5 meses</p>
-                <p><strong>Precio:</strong> $650</p>
-            </div>
-
-            <div class="curso-card">
-               <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c" alt="Competencia">
-                <h3>Estrategias de Competencia</h3>
-                <p class="categoria-texto">Categoría: Avanzada</p>
-                <p>Planificación de carrera y toma de decisiones.</p>
-                <p><strong>Duración:</strong> 3 meses</p>
-                <p><strong>Precio:</strong> $450</p>
-            </div>
-
-        </div>
     </section>
 
     <footer>
@@ -104,6 +60,8 @@
         <p>Desarrollado por Grupo #02</p>
     </footer>
 
-        </body>
+    <script src="js/cursos.js"></script>
+
+</body>
 
 </html>
