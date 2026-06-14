@@ -33,13 +33,27 @@
             <p><strong>Correo:</strong> grupo02@ambienteweb.com</p>
         </div>
 
-        <form>
-            <input type="text" placeholder="Nombre completo" required>
-            <input type="email" placeholder="Correo electrónico" required>
-            <input type="tel" placeholder="Teléfono" required>
-            <input type="text" placeholder="Asunto" required>
-            <textarea rows="6" placeholder="Mensaje"></textarea>
-            <button type="submit">Enviar</button>
+        <form id="formContacto">
+
+            <input type="text" id="nombre" placeholder="Nombre completo">
+            <small id="errorNombre"></small>
+
+            <input type="email" id="correo" placeholder="Correo electrónico">
+            <small id="errorCorreo"></small>
+
+            <input type="tel" id="telefono" placeholder="Teléfono">
+            <small id="errorTelefono"></small>
+
+            <input type="text" id="asunto" placeholder="Asunto">
+            <small id="errorAsunto"></small>
+
+            <textarea id="mensaje" rows="6" placeholder="Mensaje"></textarea>
+            <small id="errorMensaje"></small>
+
+            <button type="submit" id="btnEnviar" disabled>Enviar</button>
+
+            <p id="mensajeExito"></p>
+
         </form>
 
     </section>
@@ -54,6 +68,8 @@
         <p>Facebook | Instagram | LinkedIn | Tiktok</p>
         <p>Desarrollado por Grupo #02</p>
     </footer>
+
+    <script src="js/contacto.js"></script>
 
 </body>
 

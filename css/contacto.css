@@ -1,11 +1,11 @@
-.contact-header{
+.contact-header {
     text-align: center;
     padding: 40px 20px;
     background-color: #b11226;
     color: white;
 }
 
-.contacto-container{
+.contacto-container {
     display: flex;
     justify-content: space-between;
     gap: 30px;
@@ -14,7 +14,7 @@
     background-color: #f8f8f8;
 }
 
-form{
+form {
     flex: 1;
     min-width: 300px;
     display: flex;
@@ -22,7 +22,7 @@ form{
 }
 
 form input,
-form textarea{
+form textarea {
     margin-bottom: 15px;
     padding: 12px;
     border: 1px solid #b0b0b0;
@@ -31,7 +31,7 @@ form textarea{
     font-size: 14px;
 }
 
-form button{
+form button {
     background-color: #c1121f;
     color: white;
     border: none;
@@ -40,11 +40,12 @@ form button{
     border-radius: 5px;
     font-weight: bold;
 }
-form button:hover{
+
+form button:hover {
     background-color: #9b0d18;
 }
 
-.info-contacto{
+.info-contacto {
     flex: 1;
     min-width: 250px;
     background-color: white;
@@ -53,13 +54,36 @@ form button:hover{
     border-radius: 5px;
 }
 
-.info-contacto h2{
+.info-contacto h2 {
     color: #1e3a5f;
 }
 
-.mapa{
+.mapa {
     width: 100%;
     height: 400px;
     border: 0;
     margin-top: 20px;
+}
+
+small {
+    color: #c1121f;
+    font-size: 12px;
+    display: block;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+#mensajeExito {
+    color: green;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+button:disabled:hover {
+    background-color: #c1121f;
 }
