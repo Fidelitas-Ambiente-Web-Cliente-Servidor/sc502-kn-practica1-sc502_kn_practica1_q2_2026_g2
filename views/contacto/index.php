@@ -31,28 +31,34 @@
             <p><strong>Dirección:</strong> San José, Montes de Oca, San Pedro, Costa Rica</p>
             <p><strong>Teléfono:</strong> +506 8877-2323</p>
             <p><strong>Correo:</strong> grupo02@ambienteweb.com</p>
+
+            <?php if ($mensajeExito != ""): ?>
+                <p id="mensajeExito"><?php echo $mensajeExito; ?></p>
+            <?php endif; ?>
+
+            <?php if ($mensajeError != ""): ?>
+                <p style="color: red; font-weight: bold;"><?php echo $mensajeError; ?></p>
+            <?php endif; ?>
         </div>
 
-        <form id="formContacto">
+        <form id="formContacto" method="POST" action="index.php?controller=contacto&action=index">
 
-            <input type="text" id="nombre" placeholder="Nombre completo">
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre completo">
             <small id="errorNombre"></small>
 
-            <input type="email" id="correo" placeholder="Correo electrónico">
+            <input type="email" id="correo" name="correo" placeholder="Correo electrónico">
             <small id="errorCorreo"></small>
 
-            <input type="tel" id="telefono" placeholder="Teléfono">
+            <input type="tel" id="telefono" name="telefono" placeholder="Teléfono">
             <small id="errorTelefono"></small>
 
-            <input type="text" id="asunto" placeholder="Asunto">
+            <input type="text" id="asunto" name="asunto" placeholder="Asunto">
             <small id="errorAsunto"></small>
 
-            <textarea id="mensaje" rows="6" placeholder="Mensaje"></textarea>
+            <textarea id="mensaje" name="mensaje" rows="6" placeholder="Mensaje"></textarea>
             <small id="errorMensaje"></small>
 
             <button type="submit" id="btnEnviar" disabled>Enviar</button>
-
-            <p id="mensajeExito"></p>
 
         </form>
 
