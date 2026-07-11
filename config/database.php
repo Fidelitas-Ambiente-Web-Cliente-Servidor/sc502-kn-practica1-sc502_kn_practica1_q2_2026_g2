@@ -7,11 +7,11 @@ class Database
     public static function conectar()
     {
         if (self::$conexion == null) {
-            try {
+          try {
                 self::$conexion = new PDO(
-                    "mysql:host=localhost;dbname=practica_mvc;charset=utf8",
+                    "mysql:host=db;dbname=appdb;charset=utf8",
                     "root",
-                    "Coloca_tu_contraseña"
+                    "root"
                 );
 
                 self::$conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

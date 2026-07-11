@@ -1,12 +1,14 @@
 <?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 
-$controller = $_GET["controller"] ?? "contacto";
-$action = $_GET["action"] ?? "index";
+$controller = isset($_GET['controller']) ? $_GET['controller'] : 'index';
+$action = isset($_GET['action']) ? $_GET['action'] : 'index';
 
-if ($controller == "contacto") {
-    require_once "controllers/ContactoController.php";
-    $controlador = new ContactoController();
-    $controlador->$action();
+if ($controller === 'index') {
+    require_once __DIR__ . '/controllers/IndexController.php';
+    $controllerInstance = new IndexController();
+    $controllerInstance->$action();
 } else {
-    echo "Página no encontrada";
+    die("Controlador no mapeado.");
 }
