@@ -15,6 +15,51 @@ INSERT INTO cursos_destacados (titulo, descripcion, categoria, imagen) VALUES
 ('Introducción a Circuitos', 'Conoce las reglas básicas, banderas y dinámicas fundamentales de pista.', 'Categoría: Inicial', 'introduccion.jpg'),
 ('Estrategias de Competencia', 'Planificación estratégica de carreras y toma inteligente de decisiones.', 'Categoría: Avanzada', 'estrategias.jpg');
 
+CREATE TABLE IF NOT EXISTS cursos (
+
+    id INT AUTO_INCREMENT PRIMARY KEY,
+
+    titulo VARCHAR(150) NOT NULL,
+
+    descripcion TEXT NOT NULL,
+
+    categoria VARCHAR(50) NOT NULL,
+
+    imagen VARCHAR(255) NOT NULL
+
+);
+
+INSERT INTO cursos
+(titulo, descripcion, categoria, imagen)
+
+VALUES
+
+('Karting Profesional',
+'Desarrolla las bases de conducción competitiva.',
+'Inicial',
+'karting.jpg'),
+
+('Introducción a Circuitos',
+'Conoce el funcionamiento de un circuito profesional.',
+'Inicial',
+'introduccion.jpg'),
+
+('Conducción en Circuito',
+'Aprende técnicas avanzadas de conducción.',
+'Avanzada',
+'circuito.jpg'),
+
+('Performance Racing',
+'Mejora tu rendimiento en competencias.',
+'Avanzada',
+'performance.jpg'),
+
+('Estrategias de Competencia',
+'Planificación y toma de decisiones durante una carrera.',
+'Avanzada',
+'estrategias.jpg');
+
+
 CREATE TABLE IF NOT EXISTS profesores (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
