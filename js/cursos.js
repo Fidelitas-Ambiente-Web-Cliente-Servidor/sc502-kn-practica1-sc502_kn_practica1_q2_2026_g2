@@ -1,106 +1,131 @@
-const cursos = [
+const profesores = [
     {
-        nombre: "Karting Profesional",
-        descripcion: "Aprende las bases del automovilismo deportivo.",
-        categoria: "Inicial",
-        duracion: "2 meses",
-        precio: "$250",
-        imagen: "https://circuitoftheamericas.com/wp-content/uploads/karting-hero-image-scaled.webp"
+        nombre: "Carlos Méndez",
+        especialidad: "Conducción Deportiva",
+        descripcion: "Piloto profesional con experiencia en circuitos, trazado de curvas, control del vehículo y técnicas de conducción competitiva.",
+        foto: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=500&q=80",
+        correo: "carlos.mendez@academiadepilotos.com",
+        cursosQueImparte: [
+            "Introducción a Circuitos",
+            "Conducción en Circuito",
+            "Performance Racing"
+        ]
     },
 
     {
-        nombre: "Karting Avanzado",
-        descripcion: "Mejora técnicas de frenado y control del vehículo.",
-        categoria: "Inicial",
-        duracion: "3 meses",
-        precio: "$320",
-        imagen: "https://images.unsplash.com/photo-1517649763962-0c623066013b"
+        nombre: "María Fernández",
+        especialidad: "Manejo Defensivo",
+        descripcion: "Instructora especializada en prevención de accidentes, reacción ante emergencias y conducción segura dentro y fuera de la pista.",
+        foto: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=500&q=80",
+        correo: "maria.fernandez@academiadepilotos.com",
+        cursosQueImparte: [
+            "Karting Profesional",
+            "Introducción a Circuitos",
+            "Estrategias de Competencia"
+        ]
     },
 
     {
-        nombre: "Introducción a Circuitos",
-        descripcion: "Conoce las reglas y dinámicas de pista.",
-        categoria: "Inicial",
-        duracion: "1 mes",
-        precio: "$180",
-        imagen: "https://images.unsplash.com/photo-1503376780353-7e6692767b70"
+        nombre: "Andrés Rodríguez",
+        especialidad: "Técnicas de Frenado",
+        descripcion: "Instructor especializado en frenado deportivo, distribución del peso, entrada a curvas y control del automóvil a alta velocidad.",
+        foto: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=500&q=80",
+        correo: "andres.rodriguez@academiadepilotos.com",
+        cursosQueImparte: [
+            "Karting Avanzado",
+            "Conducción en Circuito",
+            "Performance Racing"
+        ]
     },
 
     {
-        nombre: "Conducción en Circuito",
-        descripcion: "Técnicas avanzadas de trazado y adelantamiento.",
-        categoria: "Avanzada",
-        duracion: "4 meses",
-        precio: "$500",
-        imagen: "https://www.f1-fansite.com/wp-content/uploads/2012/09/nurburgring1.jpg"
-    },
-
-    {
-        nombre: "Performance Racing",
-        descripcion: "Optimiza tu desempeño en competición.",
-        categoria: "Avanzada",
-        duracion: "5 meses",
-        precio: "$650",
-        imagen: "https://www.nationalroadautosport.com/wp-content/uploads/2023/12/Building-a-Champion-The-Anatomy-of-a-High-Performance-Racing-Car.jpg"
-    },
-
-    {
-        nombre: "Estrategias de Competencia",
-        descripcion: "Planificación de carrera y toma de decisiones.",
-        categoria: "Avanzada",
-        duracion: "3 meses",
-        precio: "$450",
-        imagen: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c"
+        nombre: "Laura Castillo",
+        especialidad: "Control y Derrape",
+        descripcion: "Piloto e instructora con experiencia en control de derrapes, pérdida de adherencia y conducción en diferentes condiciones de pista.",
+        foto: "https://images.unsplash.com/photo-1580894732444-8ecded7900cd?auto=format&fit=crop&w=500&q=80",
+        correo: "laura.castillo@academiadepilotos.com",
+        cursosQueImparte: [
+            "Karting Avanzado",
+            "Conducción en Circuito",
+            "Estrategias de Competencia"
+        ]
     }
 ];
 
-const contenedor = document.getElementById("contenedorCursos");
-const busqueda = document.getElementById("busqueda");
-const filtroCategoria = document.getElementById("filtroCategoria");
+const contenedor = document.getElementById("contenedor-profesores");
 
-function renderizarCursos(listaCursos) {
+function renderizarProfesores() {
 
     contenedor.innerHTML = "";
 
-    listaCursos.forEach(curso => {
+    profesores.forEach((profesor, index) => {
 
         contenedor.innerHTML += `
-            <div class="curso-card">
-                <img src="${curso.imagen}" alt="${curso.nombre}">
-                <h3>${curso.nombre}</h3>
-                <p class="categoria-texto">Categoría: ${curso.categoria}</p>
-                <p>${curso.descripcion}</p>
-                <p><strong>Duración:</strong> ${curso.duracion}</p>
-                <p><strong>Precio:</strong> ${curso.precio}</p>
+            <div class="tarjeta-profesor">
+                <img
+                    src="${profesor.foto}"
+                    alt="${profesor.nombre}"
+                    class="foto-profesor"
+                >
+
+                <div class="contenido-profesor">
+                    <h3>${profesor.nombre}</h3>
+
+                    <p class="especialidad-profesor">
+                        ${profesor.especialidad}
+                    </p>
+
+                    <p>
+                        ${profesor.descripcion}
+                    </p>
+
+                    <button
+                        type="button"
+                        class="btn btn-primary boton-detalle"
+                        onclick="abrirModalProfesor(${index})"
+                    >
+                        Ver detalle
+                    </button>
+                </div>
             </div>
         `;
     });
 }
 
-function aplicarFiltros() {
+function abrirModalProfesor(index) {
 
-    const textoBusqueda = busqueda.value.toLowerCase();
+    const profesor = profesores[index];
 
-    const categoriaSeleccionada = filtroCategoria.value;
+    document.getElementById("modalProfesorLabel").textContent =
+        profesor.nombre;
 
-    const cursosFiltrados = cursos.filter(curso => {
+    document.getElementById("modalFoto").src =
+        profesor.foto;
 
-        const coincideTexto =
-            curso.nombre.toLowerCase().includes(textoBusqueda) ||
-            curso.descripcion.toLowerCase().includes(textoBusqueda);
+    document.getElementById("modalFoto").alt =
+        profesor.nombre;
 
-        const coincideCategoria =
-            categoriaSeleccionada === "todos" ||
-            curso.categoria === categoriaSeleccionada;
+    document.getElementById("modalNombre").textContent =
+        profesor.nombre;
 
-        return coincideTexto && coincideCategoria;
-    });
+    document.getElementById("modalEspecialidad").textContent =
+        profesor.especialidad;
 
-    renderizarCursos(cursosFiltrados);
+    document.getElementById("modalDescripcion").textContent =
+        profesor.descripcion;
+
+    document.getElementById("modalCorreo").textContent =
+        profesor.correo;
+
+    document.getElementById("modalCursos").textContent =
+        profesor.cursosQueImparte.join(", ");
+
+    const modal = new bootstrap.Modal(
+        document.getElementById("modalProfesor")
+    );
+
+    modal.show();
 }
 
-busqueda.addEventListener("input", aplicarFiltros);
+renderizarProfesores();
 
-filtroCategoria.addEventListener("change", aplicarFiltros);
-
-renderizarCursos(cursos);

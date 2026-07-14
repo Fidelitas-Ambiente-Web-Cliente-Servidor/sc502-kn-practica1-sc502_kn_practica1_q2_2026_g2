@@ -1,79 +1,80 @@
-// Array de objetos que contiene la información completa de cada profesor
+
 const profesores = [
     {
         nombre: "Carlos Méndez",
-        especialidad: "Instructor de Vuelo",
-        descripcion: "Piloto comercial con experiencia en formación inicial, maniobras básicas de vuelo y seguridad aérea. Cuenta con más de 8 años formando estudiantes en programas de aviación.",
+        especialidad: "Conducción Deportiva",
+        descripcion: "Piloto profesional con más de ocho años de experiencia en circuitos. Se especializa en trazado de curvas, control del vehículo y técnicas de conducción competitiva.",
         foto: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=500&q=80",
         correo: "carlos.mendez@academiadepilotos.com",
         cursosQueImparte: [
-            "Introducción a la Aviación",
-            "Vuelo Básico",
-            "Seguridad Aérea"
+            "Introducción al Automovilismo",
+            "Conducción Deportiva",
+            "Técnicas de Circuito"
         ]
     },
     {
         nombre: "María Fernández",
-        especialidad: "Meteorología Aeronáutica",
-        descripcion: "Especialista en interpretación del clima, análisis de condiciones atmosféricas y planificación segura de vuelos según el comportamiento meteorológico.",
+        especialidad: "Manejo Defensivo",
+        descripcion: "Instructora especializada en prevención de accidentes, reacción ante situaciones de emergencia y aplicación de técnicas de conducción segura dentro y fuera de la pista.",
         foto: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=500&q=80",
         correo: "maria.fernandez@academiadepilotos.com",
         cursosQueImparte: [
-            "Meteorología Aeronáutica",
-            "Navegación Aérea",
-            "Planificación de Vuelo"
+            "Manejo Defensivo",
+            "Seguridad en Pista",
+            "Control de Emergencias"
         ]
     },
     {
         nombre: "Andrés Rodríguez",
-        especialidad: "Navegación Aérea",
-        descripcion: "Instructor enfocado en rutas aéreas, lectura de cartas aeronáuticas, procedimientos de navegación y uso correcto de instrumentos de vuelo.",
+        especialidad: "Técnicas de Frenado",
+        descripcion: "Instructor enfocado en frenado deportivo, distribución del peso, entrada a curvas y control del automóvil durante maniobras realizadas a alta velocidad.",
         foto: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=500&q=80",
         correo: "andres.rodriguez@academiadepilotos.com",
         cursosQueImparte: [
-            "Navegación Aérea",
-            "Cartografía Aeronáutica",
-            "Procedimientos de Ruta"
+            "Frenado Deportivo",
+            "Trazado de Curvas",
+            "Control del Vehículo"
         ]
     },
     {
         nombre: "Laura Castillo",
-        especialidad: "Seguridad Operacional",
-        descripcion: "Profesora con experiencia en protocolos de seguridad, gestión de riesgos, prevención de incidentes y factores humanos dentro del entorno aeronáutico.",
+        especialidad: "Control y Derrape",
+        descripcion: "Piloto e instructora con experiencia en recuperación de pérdida de adherencia, control de derrapes y dominio del vehículo en diferentes condiciones de pista.",
         foto: "https://images.unsplash.com/photo-1580894732444-8ecded7900cd?auto=format&fit=crop&w=500&q=80",
         correo: "laura.castillo@academiadepilotos.com",
         cursosQueImparte: [
-            "Seguridad Operacional",
-            "Gestión de Riesgos",
-            "Factores Humanos"
+            "Control y Derrape",
+            "Conducción en Pista Mojada",
+            "Técnicas Avanzadas"
         ]
     }
 ];
 
-// Se obtiene el contenedor donde se van a insertar las tarjetas generadas con JavaScript
+// Obtiene el contenedor donde se mostrarán las tarjetas.
 const contenedorProfesores = document.getElementById("contenedor-profesores");
 
+// Genera las tarjetas de profesores.
 function renderizarProfesores() {
+    if (!contenedorProfesores) {
+        return;
+    }
+
+    contenedorProfesores.innerHTML = "";
+
     profesores.forEach((profesor, index) => {
-        const columna = document.createElement("div");
-        columna.classList.add("col-md-6", "col-lg-3");
-
-        const tarjeta = document.createElement("div");
-        tarjeta.classList.add("card", "h-100", "tarjeta-profesor");
-
-        // Se agrega un atributo data-* para identificar cuál profesor fue seleccionado
-        tarjeta.setAttribute("data-profesor", index);
+        const tarjeta = document.createElement("article");
+        tarjeta.classList.add("tarjeta-profesor");
 
         const imagen = document.createElement("img");
         imagen.src = profesor.foto;
-        imagen.alt = profesor.nombre;
-        imagen.classList.add("card-img-top", "foto-profesor");
+        imagen.alt = `Fotografía de ${profesor.nombre}`;
+        imagen.classList.add("foto-profesor");
 
         const cuerpo = document.createElement("div");
-        cuerpo.classList.add("card-body", "text-center");
+        cuerpo.classList.add("contenido-profesor");
 
-        const nombre = document.createElement("h5");
-        nombre.classList.add("card-title");
+        const nombre = document.createElement("h3");
+        nombre.classList.add("nombre-profesor");
         nombre.textContent = profesor.nombre;
 
         const especialidad = document.createElement("p");
@@ -81,12 +82,17 @@ function renderizarProfesores() {
         especialidad.textContent = profesor.especialidad;
 
         const descripcion = document.createElement("p");
-        descripcion.classList.add("card-text");
+        descripcion.classList.add("descripcion-profesor");
         descripcion.textContent = profesor.descripcion;
 
         const boton = document.createElement("button");
-        boton.classList.add("btn", "btn-primary");
+        boton.type = "button";
+        boton.classList.add("btn", "btn-primary", "boton-detalle");
         boton.textContent = "Ver detalle";
+
+        boton.addEventListener("click", function () {
+            abrirModalProfesor(index);
+        });
 
         cuerpo.appendChild(nombre);
         cuerpo.appendChild(especialidad);
@@ -96,34 +102,46 @@ function renderizarProfesores() {
         tarjeta.appendChild(imagen);
         tarjeta.appendChild(cuerpo);
 
-        columna.appendChild(tarjeta);
-        contenedorProfesores.appendChild(columna);
-
-        // Al hacer clic en la tarjeta se obtiene el índice del profesor y se abre el modal
-        tarjeta.addEventListener("click", function () {
-            const profesorSeleccionado = this.getAttribute("data-profesor");
-            abrirModalProfesor(profesorSeleccionado);
-        });
+        contenedorProfesores.appendChild(tarjeta);
     });
 }
 
-// Función que recibe el índice del profesor seleccionado y muestra sus datos
+// Muestra en el modal los datos del profesor seleccionado.
 function abrirModalProfesor(index) {
     const profesor = profesores[index];
 
-    document.getElementById("modalProfesorLabel").textContent = profesor.nombre;
-    document.getElementById("modalFoto").src = profesor.foto;
-    document.getElementById("modalFoto").alt = profesor.nombre;
-    document.getElementById("modalNombre").textContent = profesor.nombre;
-    document.getElementById("modalEspecialidad").textContent = profesor.especialidad;
-    document.getElementById("modalDescripcion").textContent = profesor.descripcion;
-    document.getElementById("modalCorreo").textContent = profesor.correo;
-    document.getElementById("modalCursos").textContent = profesor.cursosQueImparte.join(", ");
+    if (!profesor) {
+        return;
+    }
 
-    // Se crea una instancia del modal de Bootstrap y se muestra en pantalla
-    const modalProfesor = new bootstrap.Modal(document.getElementById("modalProfesor"));
+    document.getElementById("modalProfesorLabel").textContent =
+        `Información de ${profesor.nombre}`;
+
+    document.getElementById("modalFoto").src = profesor.foto;
+    document.getElementById("modalFoto").alt =
+        `Fotografía de ${profesor.nombre}`;
+
+    document.getElementById("modalNombre").textContent = profesor.nombre;
+
+    document.getElementById("modalEspecialidad").textContent =
+        profesor.especialidad;
+
+    document.getElementById("modalDescripcion").textContent =
+        profesor.descripcion;
+
+    document.getElementById("modalCorreo").textContent =
+        profesor.correo;
+
+    document.getElementById("modalCursos").textContent =
+        profesor.cursosQueImparte.join(", ");
+
+    const elementoModal = document.getElementById("modalProfesor");
+    const modalProfesor = new bootstrap.Modal(elementoModal);
+
     modalProfesor.show();
 }
 
-// Se ejecuta la función principal para mostrar los profesores al cargar la página
-renderizarProfesores();
+// Muestra los profesores cuando termina de cargar el documento.
+document.addEventListener("DOMContentLoaded", renderizarProfesores);
+
+

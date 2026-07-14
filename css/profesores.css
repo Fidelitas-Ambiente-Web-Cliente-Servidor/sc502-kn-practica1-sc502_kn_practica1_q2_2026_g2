@@ -1,124 +1,135 @@
-.hero-profesores {
-    background: linear-gradient(rgba(7, 30, 61, 0.75), rgba(7, 30, 61, 0.75)), url("../img/profesores-bg.jpg");
-    background-size: cover;
-    background-position: center;
-    color: white;
-    padding: 90px 20px;
+.encabezado-profesores {
+    text-align: center;
+    padding: 40px 20px;
 }
 
-.hero-profesores h1 {
-    font-size: 3rem;
-    font-weight: bold;
+.encabezado-profesores h1 {
+    color: #c1121f;
     margin-bottom: 15px;
 }
 
-.hero-profesores p {
-    max-width: 750px;
-    margin: 0 auto;
-    font-size: 1.2rem;
+.encabezado-profesores p {
+    max-width: 700px;
+    margin: auto;
+    line-height: 1.6;
 }
-
 
 .seccion-profesores {
-    padding: 70px 0;
-    background-color: #f4f7fb;
+    padding: 20px 40px;
 }
 
-.seccion-profesores h2 {
-    color: #071e3d;
-    font-weight: bold;
+.titulo-seccion {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.titulo-seccion h2 {
+    color: #c1121f;
+    margin-bottom: 10px;
 }
 
 .descripcion-seccion {
-    color: #555;
     max-width: 700px;
-    margin: 0 auto;
+    margin: auto;
+    color: #555;
 }
 
+.contenedor-profesores {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
 
 .tarjeta-profesor {
-    border: none;
-    border-radius: 15px;
+    background: white;
+    width: 300px;
+    border-radius: 10px;
     overflow: hidden;
-    cursor: pointer;
-    background-color: white;
-    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.10);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding-bottom: 15px;
+    transition: transform 0.3s;
 }
 
 .tarjeta-profesor:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+    transform: translateY(-5px);
 }
 
 .foto-profesor {
     width: 100%;
-    height: 240px;
+    height: 220px;
     object-fit: contain;
-    background-color: #f4f7fb;
+    background-color: #f2f2f2;
     padding: 10px;
 }
 
-.tarjeta-profesor .card-body {
-    padding: 22px;
+.contenido-profesor {
+    padding: 15px;
+    text-align: center;
 }
 
-.tarjeta-profesor .card-title {
-    color: #071e3d;
-    font-weight: bold;
+.contenido-profesor h3 {
     margin-bottom: 8px;
 }
 
+.contenido-profesor p {
+    line-height: 1.5;
+}
+
 .especialidad-profesor {
-    color: #0d6efd;
-    font-weight: 600;
-    margin-bottom: 10px;
+    color: #c1121f;
+    font-weight: bold;
 }
 
-.tarjeta-profesor .card-text {
-    color: #555;
-    font-size: 0.95rem;
-    line-height: 1.6;
-}
-
-.tarjeta-profesor .btn {
+.boton-detalle {
+    background-color: #c1121f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
     margin-top: 10px;
-    border-radius: 25px;
-    padding: 8px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.boton-detalle:hover {
+    background-color: #8f0d17;
 }
 
 .seccion-mision-vision {
-    padding: 70px 0;
-    background-color: white;
+    padding: 40px;
+}
+
+.contenedor-mision-vision {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
 .caja-info {
-    height: 100%;
-    padding: 35px;
-    border-radius: 15px;
-    background-color: #071e3d;
-    color: white;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.14);
+    background: white;
+    width: 450px;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .caja-info h2 {
-    font-weight: bold;
+    color: #c1121f;
     margin-bottom: 15px;
 }
 
 .caja-info p {
-    line-height: 1.7;
-    margin-bottom: 0;
+    line-height: 1.6;
 }
 
 .modal-profesor {
-    border-radius: 18px;
-    border: none;
+    border-radius: 10px;
     overflow: hidden;
 }
 
 .modal-profesor .modal-header {
-    background-color: #071e3d;
+    background-color: #c1121f;
     color: white;
 }
 
@@ -131,63 +142,168 @@
     width: 160px;
     height: 160px;
     object-fit: contain;
-    background-color: #f4f7fb;
-    border: 5px solid #f4f7fb;
+    background-color: #f2f2f2;
+    padding: 5px;
+    border-radius: 50%;
 }
 
 #modalNombre {
-    color: #071e3d;
-    font-weight: bold;
+    margin-top: 10px;
 }
 
 #modalEspecialidad {
-    color: #0d6efd;
-    font-weight: 600;
+    color: #c1121f;
+    font-weight: bold;
 }
 
 #modalDescripcion {
-    color: #555;
     line-height: 1.6;
 }
 
 @media (max-width: 768px) {
-    .hero-profesores {
-        padding: 70px 15px;
+    .seccion-profesores {
+        padding: 20px;
     }
 
-    .hero-profesores h1 {
-        font-size: 2.2rem;
-    }
-
-    .hero-profesores p {
-        font-size: 1rem;
-    }
-
-    .foto-profesor {
-        height: 220px;
+    .tarjeta-profesor {
+        width: 100%;
+        max-width: 350px;
     }
 
     .caja-info {
-        padding: 25px;
+        width: 100%;
+    }
+
+    .encabezado-profesores h1 {
+        font-size: 2rem;
+    }
+
+    .foto-profesor {
+        height: 240px;
     }
 }
 
 @media (max-width: 576px) {
-    .hero-profesores h1 {
-        font-size: 1.9rem;
+    .encabezado-profesores {
+        padding: 30px 15px;
     }
 
-    .seccion-profesores,
+    .seccion-profesores {
+        padding: 20px 15px;
+    }
+
     .seccion-mision-vision {
-        padding: 50px 0;
+        padding: 30px 15px;
     }
 
     .foto-profesor {
-        height: 210px;
+        height: 230px;
     }
 
     .modal-foto {
         width: 140px;
         height: 140px;
     }
+    .seccion-detalle-profesor {
+    padding: 50px 20px;
+}
+
+.tarjeta-detalle-profesor {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 950px;
+    margin: auto;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contenedor-foto-detalle {
+    width: 40%;
+    min-width: 300px;
+    background-color: #f2f2f2;
+}
+
+.foto-detalle-profesor {
+    width: 100%;
+    height: 100%;
+    min-height: 420px;
+    padding: 15px;
+    object-fit: contain;
+}
+
+.informacion-detalle-profesor {
+    flex: 1;
+    min-width: 300px;
+    padding: 40px;
+}
+
+.informacion-detalle-profesor h1 {
+    margin-bottom: 10px;
+    color: #c1121f;
+}
+
+.informacion-detalle-profesor h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 1.3rem;
+}
+
+.informacion-detalle-profesor p {
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+.boton-detalle,
+.boton-volver {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    background-color: #c1121f;
+    border-radius: 8px;
+}
+
+.boton-detalle:hover,
+.boton-volver:hover {
+    color: white;
+    background-color: #8f0d17;
+}
+
+.mensaje-error {
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+    color: #721c24;
+    background-color: #f8d7da;
+    border-radius: 8px;
+}
+
+.sin-resultados {
+    width: 100%;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .tarjeta-detalle-profesor {
+        display: block;
+    }
+
+    .contenedor-foto-detalle {
+        width: 100%;
+        min-width: auto;
+    }
+
+    .foto-detalle-profesor {
+        height: 320px;
+        min-height: auto;
+    }
+
+    .informacion-detalle-profesor {
+        min-width: auto;
+        padding: 25px;
+    }
+}
 }

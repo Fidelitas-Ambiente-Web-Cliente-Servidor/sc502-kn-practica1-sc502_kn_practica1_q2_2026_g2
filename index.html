@@ -1,99 +1,220 @@
 <!DOCTYPE html>
 <html lang="es">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Academia de Pilotos</title>
+<head>
+    <meta charset="UTF-8">
 
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/index.css">
-    </head>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <body>
+    <title>Profesores - Academia de Pilotos de Carreras</title>
 
-        <nav>
-            <ul>
-                <li><a href="index.html" class="activo">Inicio</a></li>
-                <li><a href="cursos.html">Cursos</a></li>
-                <li><a href="profesores.html">Profesores</a></li>
-                <li><a href="index.php?controller=contacto&action=index">Contacto</a></li>
-            </ul>
-        </nav>
+    <!-- Bootstrap para el funcionamiento del modal -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
 
-        <header class="hero">
+    <!-- Estilos generales -->
+    <link rel="stylesheet" href="css/style.css">
 
-            <h1>Academia de Pilotos de Carreras</h1>
-            <p>Forma parte de la próxima generación de pilotos
-                profesionales.</p>
-            <a href="cursos.html" class="btn-principal">Ver Cursos</a>
+    <!-- Estilos específicos de profesores -->
+    <link rel="stylesheet" href="css/profesores.css">
+</head>
 
-        </header>
+<body>
 
-        <section class="cursos-destacados">
+    <nav>
+        <ul>
+            <li>
+                <a href="index.html">
+                    Inicio
+                </a>
+            </li>
 
-            <h2>Cursos Destacados</h2>
+            <li>
+                <a href="cursos.html">
+                    Cursos
+                </a>
+            </li>
 
-            <div class="contenedor-cursos" id="contenedorCursos">
-            </div>
+            <li>
+                <a href="profesores.html" class="activo">
+                    Profesores
+                </a>
+            </li>
 
-        </section>
+            <li>
+                <a href="index.php?controller=contacto&action=index">
+                    Contacto
+                </a>
+            </li>
+        </ul>
+    </nav>
 
-        <section class="estadisticas">
+    <header class="encabezado-profesores">
+        <h1>Equipo de Profesores</h1>
 
-            <h2>Nuestra Academia en Números</h2>
+        <p>
+            Conoce a los instructores encargados de formar a los futuros
+            pilotos de carreras con experiencia, disciplina y pasión por
+            el automovilismo.
+        </p>
+    </header>
 
-            <div class="stats-container">
+    <main>
 
-                <div class="stat">
-                    <h3>850+</h3>
-                    <p>Estudiantes Graduados</p>
-                </div>
+        <section class="seccion-profesores">
 
-                <div class="stat">
-                    <h3>18</h3>
-                    <p>Instructores Certificados</p>
-                </div>
+            <div class="titulo-seccion">
+                <h2>Nuestros instructores</h2>
 
-                <div class="stat">
-                    <h3>12</h3>
-                    <p>Programas Disponibles</p>
-                </div>
-
-            </div>
-
-        </section>
-
-        <section class="testimonios">
-
-            <h2>Lo que dicen nuestros estudiantes</h2>
-
-            <div class="testimonio">
-                <p>
-                    "Gracias a la academia participé en mis primeras
-                    competencias
-                    nacionales con excelentes resultados."
+                <p class="descripcion-seccion">
+                    Cada profesor cuenta con experiencia en conducción
+                    deportiva, seguridad en pista y control profesional
+                    del vehículo.
                 </p>
-                <h4>- Randy Segura</h4>
             </div>
 
-            <div class="testimonio">
-                <p>
-                    "Los instructores transmiten experiencia real de pista y
-                    ayudan
-                    a mejorar rápidamente."
-                </p>
-                <h4>- Dayelin Valverde</h4>
+            <!--
+                Los profesores se cargan desde el archivo
+                js/profesores.js.
+            -->
+            <div
+                id="contenedor-profesores"
+                class="contenedor-profesores"
+            >
             </div>
 
         </section>
 
-        <footer>
-            <p>Academia de Pilotos de Carreras</p>
-            <p>Facebook | Instagram | LinkedIn | TikTok</p>
-            <p>Desarrollado por Grupo #02</p>
-        </footer>
-        <script src="js/index.js"></script>
-    </body>
+        <section class="seccion-mision-vision">
+
+            <div class="contenedor-mision-vision">
+
+                <article class="caja-info">
+                    <h2>Misión</h2>
+
+                    <p>
+                        Formar pilotos responsables, competitivos y
+                        preparados mediante una enseñanza práctica
+                        enfocada en la conducción deportiva, la seguridad
+                        en pista y el dominio técnico del vehículo.
+                    </p>
+                </article>
+
+                <article class="caja-info">
+                    <h2>Visión</h2>
+
+                    <p>
+                        Ser una academia reconocida por la calidad de sus
+                        programas de automovilismo, la experiencia de sus
+                        instructores y el desarrollo profesional de nuevos
+                        pilotos de carreras.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Modal con la información detallada del profesor -->
+    <div
+        class="modal fade"
+        id="modalProfesor"
+        tabindex="-1"
+        aria-labelledby="modalProfesorLabel"
+        aria-hidden="true"
+    >
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content modal-profesor">
+
+                <div class="modal-header">
+
+                    <h5
+                        class="modal-title"
+                        id="modalProfesorLabel"
+                    >
+                        Información del profesor
+                    </h5>
+
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Cerrar"
+                    >
+                    </button>
+
+                </div>
+
+                <div class="modal-body text-center">
+
+                    <img
+                        id="modalFoto"
+                        src=""
+                        alt="Fotografía del profesor"
+                        class="img-fluid rounded-circle mb-3 modal-foto"
+                    >
+
+                    <h3 id="modalNombre"></h3>
+
+                    <h5 id="modalEspecialidad"></h5>
+
+                    <p
+                        id="modalDescripcion"
+                        class="mt-3"
+                    >
+                    </p>
+
+                    <p>
+                        <strong>Correo:</strong>
+
+                        <span id="modalCorreo"></span>
+                    </p>
+
+                    <p>
+                        <strong>Cursos que imparte:</strong>
+
+                        <span id="modalCursos"></span>
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>
+            Academia de Pilotos de Carreras
+        </p>
+
+        <p>
+            Facebook | Instagram | LinkedIn | TikTok
+        </p>
+
+        <p>
+            Desarrollado por Grupo #02
+        </p>
+    </footer>
+
+    <!-- Bootstrap para abrir y cerrar el modal -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    >
+    </script>
+
+    <!-- Archivo que contiene los profesores -->
+    <script src="js/profesores.js"></script>
+
+</body>
 
 </html>
+
