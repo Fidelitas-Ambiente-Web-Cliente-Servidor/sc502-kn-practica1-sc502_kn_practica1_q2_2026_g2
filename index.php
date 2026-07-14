@@ -22,6 +22,20 @@ switch ($controller) {
 
         break;
 
+        case 'cursos':
+    require_once __DIR__ . '/controllers/CursosController.php';
+
+    $controllerInstance = new CursosController();
+
+    if ($action === 'index') {
+        $controllerInstance->index();
+    } else {
+        http_response_code(404);
+        echo 'Acción de cursos no encontrada.';
+    }
+
+    break;
+
     case 'profesores':
         require_once __DIR__ . '/controllers/ProfesoresController.php';
 
